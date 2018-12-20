@@ -15,5 +15,7 @@ Route::get('/','masterController@index');
 
 Route::resource('admin/dict','dictController');
 Route::resource('admin/book','bookController');
+Route::get('book','masterController@book');
+Route::get('dictionary','masterController@dictionary');
 Route::get('games','masterController@XO');
 
