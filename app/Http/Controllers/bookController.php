@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\bookModel;
+use App\Http\Requests\BookRequest;
 use Illuminate\Http\Request;
 
-class bookController extends Controller
+class bookController extends AdminController
 {
     /**
      * Display a listing of the resource.
@@ -32,19 +33,29 @@ class bookController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return array
      */
-    public function store(Request $request)
-    {
-        $this->validate($request,[
-            'bookName'=>'required',
-            'bookType'=>'required',
-            'bookAbout'=>'required',
-            'bookPrice'=>'required',
-        ]);
+    public function store(BookRequest $request)
 
-        bookModel::create($request->all());
-        return redirect('admin/book');
+    {
+        $imagesUrl = $this->uploadImages($request->file('img_url'));
+//        auth()->user()->article()->create(array_merge(['images'=> $imagesUrl],$request->all()));
+
+        return redirect(route('book.index'));
+
+
+//        $this->validate($request,[
+//            'img_url'=>'required',
+//            'bookName'=>'required',
+//            'bookType'=>'required',
+//            'bookAbout'=>'required',
+//            'bookPrice'=>'required',
+//            'description'=>'required'
+//        ]);
+//
+//        bookModel::create($request->all());
+
+//        return $request->all();
     }
 
     /**
@@ -83,7 +94,6 @@ class bookController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

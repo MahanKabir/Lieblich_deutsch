@@ -2,13 +2,24 @@
 
 @section('content')
 
+    <style>
+
+    </style>
+
     <body>
 
     <div class="container shadow p-3 mb-5 bg-white rounded " style="width: 500px">
 
-        <form action="{{ action('bookController@store') }}" method="post">
+        <form action="{{ action('bookController@store') }}" method="post" enctype="multipart/form-data">
+
 
             <input class="form-control" type="hidden" name="_token" value="{{ csrf_token() }}">
+            @include('errors')
+            <div class="form-grout
+                <label>عکس: </label>
+                <input class="form-control" type="file" name="img_url" value="">
+            </div>
+
             <div class="form-group">
                 <label>نام کتاب: </label>
                 <input class="form-control" type="text" name="bookName" placeholder="">
@@ -24,6 +35,10 @@
             <div class="form-group">
                 <label>قیمت: </label>
                 <input class="form-control" type="text" name="bookPrice">
+            </div>
+            <div class="form-group">
+                <label>خلاصه: </label>
+                <input class="form-control" type="text" name="description">
             </div>
 
             <input type="submit" value="Send" class="btn btn-success">

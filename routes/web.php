@@ -17,5 +17,6 @@ Route::resource('admin/dict','dictController');
 Route::resource('admin/book','bookController');
 Route::get('book','masterController@book');
 Route::get('dictionary','masterController@dictionary');
-Route::get('games','masterController@XO');
+Route::get('xo','masterController@XO');
+Route::get('wampus','masterController@wampus');
 

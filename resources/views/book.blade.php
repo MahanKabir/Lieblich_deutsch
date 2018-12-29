@@ -5,17 +5,16 @@
     <style>
         #tiles{
             margin: auto;
-            width: 100%;
+            width: 75%;
             padding: 10px;
         }
         #tile{
 
-            border: 1px solid #BFBFBF;
 
-            box-shadow: 10px 10px 5px #6c757d;
+            box-shadow: 5px 5px 2.5px #6c757d;
         }
         #tile:hover{
-            box-shadow: 5px 5px 2.5px #1d2124;
+            box-shadow: 2.5px 2.5px 1.25px #1d2124;
             cursor: pointer;
         }
 
@@ -27,12 +26,15 @@
     <div id="tiles" class="row">
         @foreach($bookModels as $bookModel)
             <div id="tile" class="card" style="margin: 10px; width: 30%;">
+                <h5 class="card-title">Name: {{ $bookModel->bookName }}</h5>
                 <img class="card-img-top" src="icons/telegram.png" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">Name: {{ $bookModel->bookName }}</h5>
+                    <hr>
+
                     <h6 class="card-title">Type: {{ $bookModel->bookType }}</h6>
                     <h6 class="card-title">About: {{ $bookModel->bookAbout }}</h6>
                     <h6 class="card-title">Price: {{ $bookModel->bookPrice }} تومان</h6>
+                    <hr>
                     <a href="#" class="btn btn-primary">Buy</a>
                 </div>
             </div>

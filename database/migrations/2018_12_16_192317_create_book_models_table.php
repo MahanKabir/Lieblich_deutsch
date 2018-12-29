@@ -20,8 +20,8 @@ class CreateBookModelsTable extends Migration
             $table->string('bookPrice');
             $table->string('bookAbout');
             $table->string('bookType');
-            $table->text('description');
-            $table->string('img_url');
+            $table->string('description');
+            $table->text('img_url');
 
             $table->timestamps();
         });

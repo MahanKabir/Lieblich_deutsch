@@ -27,15 +27,26 @@
 
     }
 </style>
-<div id="footer">
-    <div>asdasd</div>
-    <div>asdasd</div>
+<div id="footer" onclick="startAnimation()">
     <div id="contact">
         <ul>
-            <li><img src="icons/telegram.png"></li>
+            <li><img id="img"  src="icons/telegram.png"></li>
             <li><img src="icons/instagram.png"></li>
             <li><img src="icons/gmail.png"></li>
             <li><img src="icons/facebook.png"></li>
         </ul>
     </div>
 </div>
+
+<script>
+    function startAnimation() {
+        var frameHeight = 102;
+        var frames = 15;
+        var frame = 0;
+        var div = document.getElementById("animation");
+        setInterval(function () {
+            var frameOffset = (++frame % frames) * -frameHeight;
+            div.style.backgroundPosition = "0px " + frameOffset + "px";
+        }, 100);
+    }
+</script>

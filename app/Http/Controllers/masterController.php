@@ -23,4 +23,8 @@ class masterController extends Controller
     public function XO(){
         return view('games.XO');
     }
+
+    public function Wampus(){
+        return view('games.wampus');
+    }
 }
