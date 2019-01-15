@@ -14,7 +14,7 @@
     </style>
 
     <div id="book_tile_create">
-        <form action="{{ route('book.store')  }}" method="post" enctype="multipart/form-data">
+        <form action="" method="post" enctype="multipart/form-data">
             <input class="form-control" type="hidden" name="_token" value="{{ csrf_token() }}">
 
             <input type="file" name="bookimage"><br>

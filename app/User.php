@@ -27,7 +27,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function article(){
-        return $this->hasMany(bookModel::class);
+    public function book()
+    {
+        return $this->hasMany(Book::class);
+    }
+
+
+    public function isAdmin(){
+        return $this->level == 'admin'? true:false;
     }
 }

@@ -10,19 +10,8 @@
 </style>
 
 <div>
-    <div id="head">
-
+    <div id="head" style="display: block">
+        <img src="/images/heder_01.jpg">
     </div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="{{ action('bookController@index') }}">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="{{ action('masterController@book') }}">Books</a>
-                <a class="nav-item nav-link" href="#">Gramers</a>
-                <a class="nav-item nav-link" href="{{ action('masterController@dictionary') }}">Dictionary</a>
-                <a class="nav-item nav-link disabled" href="#">Contact</a>
-            </div>
-        </div>
-    </nav>
 </div>

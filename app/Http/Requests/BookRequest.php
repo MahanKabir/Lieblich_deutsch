@@ -24,12 +24,11 @@ class BookRequest extends FormRequest
     public function rules()
     {
         return [
-            'bookName'=>'required|max:2500',
-            'bookPrice'=>'required',
-            'bookAbout'=>'required',
-            'bookType'=>'required',
-            'description'=>'required',
-            'img_url'=>'required|mimes:jpeg,png,bmp'
+            'bookimage'=>'required',
+            'bookname'=>'required|max:2500',
+            'booklevel'=>'required',
+            'booktype'=>'required',
+            'bookprice'=>'required'
         ];
     }
 }
