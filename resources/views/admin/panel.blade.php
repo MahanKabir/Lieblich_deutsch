@@ -14,7 +14,7 @@
 <div style="display: inline-flex; width: 100%; height: 100vh;">
 
     @include('admin.sidebar')
-    <div style="margin: auto">
+    <div style="width: 100%;">
         @yield('content')
     </div>
 </div>

@@ -11,8 +11,12 @@
 |
 */
 Route::get('/',function(){
-    return view('master');
+//    event(new \App\Events\UserActivation(\App\User::find(1)));
+    return 'done';
 });
+
+Route::get('/user/active/email/{token}' , 'UserController@activation')->name('activation.account');
+
 
 Route::get('u',function(){
     return $u=\App\User::create([
@@ -26,17 +30,26 @@ Route::get('u',function(){
 Route::group(['namespace' => 'Admin' , 'middleware' => ['auth:web' , 'checkAdmin'], 'prefix' => 'admin'],function (){
     $this->get('/panel','PanelController@panel');
     $this->resource('/panel/book','BookController');
+    $this->resource('/panel/lesson','LessonController');
 });
 Route::group(['prefix'=>'user'],function(){
+
     $this->get('/book','MasterController@book');
     $this->resource('/profile','User\UserController');
+
+    $this->get('/course','MasterController@course');
+});
+Route::group(['middleware'=>'auth:web'],function(){
+    $this->post('/course/payment','CourseController@payment');
+    $this->get('/course/payment/check','CourseController@checker');
+
 });
 
 Route::group(['namespace' => 'Auth'],function(){
     // Authentication Routes...
     $this->get('login', 'LoginController@showLoginForm')->name('login');
     $this->post('login', 'LoginController@login');
-    $this->post('logout', 'LoginController@logout')->name('logout');
+    $this->get('logout', 'LoginController@logout')->name('logout');
 
     // Registration Routes...
     $this->get('register', 'RegisterController@showRegistrationForm')->name('register');

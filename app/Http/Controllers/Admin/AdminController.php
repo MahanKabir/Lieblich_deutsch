@@ -16,4 +16,12 @@ class AdminController extends Controller
         $file->move(public_path($imagePath),$filename);
         return $imagePath.$filename;
     }
+    protected function uploadImagesCourse($file){
+
+        $year=Carbon::now()->year;
+        $imagePath="/upload/image_course/{$year}/";
+        $filename=$file->getClientOriginalName();
+        $file->move(public_path($imagePath),$filename);
+        return $imagePath.$filename;
+    }
 }

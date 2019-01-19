@@ -10,11 +10,15 @@
 </header>
 
 <body>
-@include('header')
 
-@yield('content')
+    @include('header')
+    <div style="background-color: #BDBDBD">
+    @yield('content')
+    </div>
+    @include('footer')
 
-@include('footer')
+
+
 
 </body>
 </html>

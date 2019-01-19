@@ -22,8 +22,6 @@ class CreateBooksTable extends Migration
             $table->string('booklevel');
             $table->string('booktype');
             $table->integer('bookprice');
-
-
             $table->timestamps();
         });
     }

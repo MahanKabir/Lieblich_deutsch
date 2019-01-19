@@ -17,8 +17,11 @@ class MasterController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function book(){
-        $books=Book::all();
+        $books=Book::latest()->paginate(6);
         return view('book',compact('books'));
+    }
+    public function lesson(){
+        return view('user.lesson');
     }
 
     public function dictionary(){

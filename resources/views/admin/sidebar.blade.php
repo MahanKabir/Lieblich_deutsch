@@ -9,28 +9,39 @@
     }
     .submenu{
         width: 100%;
-        height: 100px;
+        height: 45px;
         margin-top: 10px;
         text-align: right;
         display: inline-flex;
     }
     .submenu a{
         width: 100%;
-        height: 100px;
+        height: 45px;
         margin: 2.5px;
         border-radius: 2.5px;
         background-color: #80DEEA;
         text-align: center;
+        text-decoration: none;
+        color: #1d2124;
+    }
+    .submenu a:hover{
+        background-color: #9fcdff;
     }
 </style>
 
 
 <div id="admin_menu">
 
-    <div class="submenu"><a href="">گرامر</a></div>
-    <div class="submenu"><a href="{{ route('book.index') }}">کتاب</a></div>
-    <div class="submenu"><a href="#">آهنگ</a></div>
-    <div class="submenu"><a href="#">دیکشنری</a></div>
-    <div class="submenu"><a href="#">اطلاعات</a></div>
+    <div class="submenu"><a href="{{ route('lesson.index') }}">مدیریت دوره ها</a></div>
+    <div class="submenu"><a href="{{ route('book.index') }}">مدیریت کتاب ها</a></div>
+    <div class="submenu"><a href="#">مدیریت آهنگ ها</a></div>
+    <div class="submenu"><a href="#">مدیریت فیلم ها</a></div>
+    <div class="submenu"><a href="#">مدیریت انیمیشن ها</a></div>
+    <div class="submenu"><a href="#">مدیریت سریال ها</a></div>
+    <div class="submenu"><a href="#">مدیریت اطلاعات</a></div>
+    <div class="submenu"><a href="#">مدیریت کاربران</a></div>
+    <div class="submenu"><a href="#">مدیریت نظرات</a></div>
+    <div class="submenu"><a href="#">مدیریت پرداخت ها</a></div>
+    <div class="submenu"><a href="#">تنظیمات وبسایت</a></div>
 
 </div>

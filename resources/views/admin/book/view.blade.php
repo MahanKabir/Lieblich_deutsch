@@ -3,9 +3,9 @@
 
     <style>
         #book_create{
-            width: 100%;
+            width: 75%;
             height:50px;
-            margin-top: 20px;
+            margin: 10px auto;
         }
         #book_create a{
             width: 100%;
@@ -13,7 +13,11 @@
             font-size: 24px;
         }
         #book_table{
-
+            width: 75%;
+            margin: auto;
+            overflow-y: scroll;
+            display: block;
+            max-height:85vh;
         }
         #book_table img{
             width: 88.25px;
@@ -21,7 +25,7 @@
         }
     </style>
     <div id="book_create">
-        <a class="btn btn-success" href="{{ route('book.create') }}">جدید</a>
+        <a class="btn btn-success" href="{{ route('book.create') }}">کتاب جدید</a>
     </div>
     <div id="book_table">
 
